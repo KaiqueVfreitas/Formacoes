@@ -18,9 +18,11 @@ public class Vetores {
 		nomes [2] = "Rebecca";
 		nomes [3] = "Guilherme";
 		nomes [4] = "Kaique";
+		int repetidor = 0;
 		
-		while(nomes < nomes[4]) {
-			System.out.println(nomes);
+		while(repetidor <= 4) {
+			System.out.println(nomes[repetidor]);
+			repetidor ++;
 		}
 	}
 
