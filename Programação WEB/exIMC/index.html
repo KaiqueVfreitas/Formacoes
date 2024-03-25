@@ -16,9 +16,13 @@
                 <p>Informe o sexo: F<input type="radio" name="sexo" id="sexoF" required> 
                     M<input type="radio" name="sexo" id="sexoM" required></p>
                 <p>O valor IMC é: <input type="text" name="txtIMC" id="txtIMC" readonly></p>
-                <input type="button" value="CALCULAR" id="btnCalcIMC" onclick="calcularIMC()">
-                <input type="reset" value="APAGAR">
-                <textarea name="area" id="txtArea" cols="20" rows="20" readonly></textarea>
+                <div>
+                    <textarea name="area" id="txtArea" cols="50" rows="15" readonly></textarea>
+                </div>
+                    <div class="botoes">
+                    <input type="button" value="CALCULAR" id="btnCalcIMC" onclick="calcularIMC()">
+                    <input type="reset" value="APAGAR">
+                </div>
             </form>
         </div>
     </section>

@@ -1,35 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-}
-
-body{
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0;
-}
-
-.container {
-    text-align: center;
-    padding-top: 20px;
-}
-
-p{
-    padding:10px;
-    align-items: center;
-    padding-top: 5px;
-}
-
-h1{
-    align-items: start;
-    padding: 10px;
-    padding-top: 20px;
-}
-
-#txtArea{
-    padding: 30px;
-}
+body, html {
+    height:100%;
+    margin:0;
+  }
+  
+  .container {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  form {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+  }
+  .botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
