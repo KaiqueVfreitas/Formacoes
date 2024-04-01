@@ -1,0 +1,58 @@
+package aulaPOO;
+
+import java.text.DecimalFormat;
+
+public class prmAulaContaCorrente {
+    // Atributos
+    double saldo;
+    String nomeTitular;
+    int agConta;
+
+    // Método para depositar
+    void depositar(double valor) {
+        saldo += valor;
+        System.out.println("Depósito de R$" + formatarValorMonetario(valor) + " efetuado.");
+    }
+
+    // Método para sacar
+    void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque efetuado.");
+        } else {
+            System.out.println("Saldo insuficiente para saque.");
+        }
+    }
+
+    // Construtor
+    public prmAulaContaCorrente() {
+        // TODO Auto-generated constructor stub
+    }
+
+    public static void main(String[] args) {
+        // Instanciando objetos da classe prmAulaContaCorrente
+        prmAulaContaCorrente cc1 = new prmAulaContaCorrente();
+        prmAulaContaCorrente cc2 = new prmAulaContaCorrente();
+
+        // Definindo valores iniciais
+        cc1.nomeTitular = "Cidade";
+        cc2.saldo = 5000;
+
+        System.out.println("========== Conta Corrente ==========");
+        System.out.println("Saldo atual: R$" + formatarValorMonetario(cc1.saldo));
+
+        // Fazendo operações de depósito e saque
+        cc1.depositar(20000);
+        System.out.println("Saldo após depósito: R$" + formatarValorMonetario(cc1.saldo));
+
+        cc1.sacar(10000);
+        System.out.println("Saldo após saque: R$" + formatarValorMonetario(cc1.saldo));
+        System.out.println("====================================");
+    }
+
+    // Método para formatar valores monetários
+    static String formatarValorMonetario(double valor) {
+        DecimalFormat formatoMonetario = new DecimalFormat("#,##0.00");
+        return formatoMonetario.format(valor);
+    }
+}
