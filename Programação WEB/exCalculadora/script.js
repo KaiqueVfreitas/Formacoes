@@ -39,14 +39,20 @@ function Divisao()
     var resultadoDiv = number1 / number2;
     var parImpar = resultadoDiv;
 
+
+    if (number2 != 0){
     document.getElementById("txtResultado").value= resultadoDiv.toFixed(3);
     if(parImpar == 0.000)
     {
         parseFloat(document.getElementById("txtParImpar").value = "Par")
     }
-    else
+        else
     {
         parseFloat(document.getElementById("txtParImpar").value = "Impar")
+        }
+    }
+    else{
+        document.getElementById("txtResultado").value = "Ñ é possível dividir"
     }
 }
 function Multi()
