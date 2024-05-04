@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "truco"
+rootProject.name = "Truco"
 include(":app")
