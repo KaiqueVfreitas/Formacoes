@@ -74,15 +74,15 @@ create table tbClientePF(
 
 
 -- Exercicio 4
-create database Terezinha;
+create database dbTerezinha;
 
-use Terezinha;
+use dbTerezinha;
 
 create table tbProduto(
-	idProp int primary key,
+	IdProd int primary key,
 	NomeProd varchar(50) not null,
 	Qtd int,
-	DataValidade Date not null,
+	DataValidade date not null,
 	Valor decimal(10,2) not null
 );
 
@@ -90,11 +90,9 @@ show tables;
 
 describe tbProduto;
 
-alter table tbProduto add Peso decimal(3,2);
-
+alter table tbProduto add Peso decimal(6,2);
 alter table tbProduto add Cor varchar(50);
-
-alter table tbProduto add Marca varchar(50);
+alter table tbProduto add Marca varchar(50) not null;
 
 
 -- Exercicio 5
@@ -112,15 +110,15 @@ add column qtd smallint unsigned not null;
 
 alter table tbvenda drop column datavalidade;
 
-alter table tbvenda add column datavenda date;
+alter table tbvenda add column datavenda date default (current_date);
+
 
 create table produto (
-    codigob bigint(13) not null,
-    nomeprod varchar(50) not null,
-    primary key (codigob)
+    codigob bigint primary key,
+    nomeprod varchar(50) not null
 );
 
-alter table tbvenda add column codigob bigint(13) not null, 
+alter table tbvenda add column codigob bigint not null, 
 add constraint fk_codigo_produto foreign key (codigob) references produto(codigob);
 
 
@@ -144,29 +142,44 @@ alter table tbproduto drop column cor;
 
 alter table tbproduto modify column peso decimal(10,2) not null;
 
-alter table tbproduto add column cor varchar(50);
+alter table tbproduto drop column cor;
 
 
 -- Segundo banco de dados do exercicio 6
 create database dblojagrande;
-use dblojagrande;
 
--- nome pedido no exercicio foi dblojica.tbcliente, contudo utilizar o ponto causa erro por ser comando 
-create table dblojicatbcliente (
-    nomecli varchar(50) not null,
-    codigocli int primary key,
-    datacadastro date not null
+alter table tbproduto add cor varchar(50); 
+
+/*Prof, achei confuso no exercicio mas 
+creio que executei da maneira correta.
+No exercicio pede para criar um banco de dados
+chamado loja grande, contudo não pede para usar,
+logo abaixo pede a modificação na tabela tbproduto,
+logo abaixo pede para criar uma tabela em um banco de dados
+que não existe, portanto preferi criar o banco. */
+
+create database dblojica;
+use dblojica;
+
+create table tbcliente(
+    nomeCli varchar(50) not null,
+    codigoCli int primary key,
+    datacadastro datetime not null
 );
 
-create table dblojagrande.tbfuncionario (
-    nomefunc varchar(50) not null,
-    codigofunc int primary key,
-    datacadastro datetime not null
+
+use dblojagrande;
+
+create table tbfuncionario(
+	NomeFunc varchar(50) not null;
+    CodigoFunc int primary key;
+    DataCadastro datetime not null default timestamp
 );
 
 drop database dblojagrande;
 
-alter table dblojica.tbcliente add column cpf char(11) not null unique;
+use dblojica;
+alter table tbcliente add column cpf char(11) not null unique;
 
 
 -- Exercicio 7
@@ -249,4 +262,8 @@ alter table tbEndereco add constraint Fk_IdCid_TbEndereco Foreign Key (IdCid) re
 
 
 -- Exercicio 9
+-- Foi um diagrama
+
+
+-- Exercicio 10 
 
