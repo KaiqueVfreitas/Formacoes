@@ -23,6 +23,7 @@ public class LivroModel {
 
     public void setId(int id) {
         this.id = id;
+        return id;
     }
 
     public String getNome() {
@@ -56,4 +57,8 @@ public class LivroModel {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    public void add(LivroModel livro) {
+    }
+
 }

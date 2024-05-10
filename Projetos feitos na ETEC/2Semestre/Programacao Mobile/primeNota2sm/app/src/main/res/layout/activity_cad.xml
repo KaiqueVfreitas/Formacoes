@@ -34,8 +34,10 @@ Dois radio button para seleção de tipo do livro
 
     <!--Registro das estelas de avaliação do livro-->
     <RatingBar
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:numStars="5"
         android:id="@+id/rating_bar_nota_inclusao"/>
 
@@ -66,7 +68,8 @@ Dois radio button para seleção de tipo do livro
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="50sp"
+        android:layout_gravity="center"
         android:id="@+id/button_inclusao"
         android:text="CADASTRAR"
         />
