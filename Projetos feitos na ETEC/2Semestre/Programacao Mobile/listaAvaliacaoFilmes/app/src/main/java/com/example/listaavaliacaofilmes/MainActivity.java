@@ -97,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
         generos.add("Romance");
         generos.add("Terror");
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, generos);
+        adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, generos);
         spinnerGenero.setAdapter(adapter);
     }
 
