@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 95px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+img {
+  height: 1px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav img {
+  height: 4vh;
+}
+nav a {
+  font-size: 26px;
+}
+
+.EntradaSite {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-image: url("img/imgSite01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.EntradaSite .ttlEntradaSite {
+  padding-top: 8%;
+}
+.EntradaSite .subttlEntradaSite {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.EntradaSite button {
+  width: 20%;
+  border-radius: 7%;
+  background-color: yellow;
+  color: white;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=style.css.map */
