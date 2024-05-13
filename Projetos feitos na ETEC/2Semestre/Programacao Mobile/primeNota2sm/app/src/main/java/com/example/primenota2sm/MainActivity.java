@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.EdgeToEdge;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> adapter;
 
 
-    //Classe LivroDao que acessa os dados
-    private LivroDao livroDao;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,24 +60,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Generos();
-        ListaLivros();
+        //ListaLivros(); // Não há necessidade de chamar este método aqui
 
 
     }
 
-    //Método de consulta no banco de dados
-    public void ListaLivros(){
-        LivroDao daoLivro 
-
+    // Método de consulta no banco de dados
+    /*public void ListaLivros(){
         ArrayAdapter adapter = new ArrayAdapter(
                 MainActivity.this, android.R.layout.simple_list_item_1, genero
         );
 
         listViewLivros.setAdapter(adapter);
-    }
+    }*/
 
 
-    //Generos que podem ser adicionados no aplicativo
+    // Generos que podem ser adicionados no aplicativo
     public void Generos() {
         genero.add("Procura por gênero:");
         genero.add("Ação");

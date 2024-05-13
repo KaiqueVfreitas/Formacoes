@@ -1,53 +1,29 @@
-// LivroModel.java
 package com.example.primenota2sm;
 
 public class LivroModel {
-    private int id;
-    private String nome;
     private String genero;
-    private float nota;
+    private String nome;
+    private int nota;
     private String tipo;
+    private int id;
 
+    public LivroDao(){
 
-    public LivroModel(String nome, String genero, float nota, String tipo) {
+    }
+
+    public LivroModel(String nome) {
         this.nome = nome;
-        this.genero = genero;
-        this.nota = nota;
-        this.tipo = tipo;
     }
-
-    // Métodos de acesso
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-        return id;
-    }
-
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
+    public LivroModel(String genero, int nota, String tipo) {
         this.genero = genero;
-    }
-
-    public float getNota() {
-        return nota;
-    }
-
-    public void setNota(float nota) {
         this.nota = nota;
+        this.tipo = tipo;
     }
 
     public String getTipo() {
@@ -57,8 +33,30 @@ public class LivroModel {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
-    public void add(LivroModel livro) {
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getGenero() {
+        return genero;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+
+
 
 }
