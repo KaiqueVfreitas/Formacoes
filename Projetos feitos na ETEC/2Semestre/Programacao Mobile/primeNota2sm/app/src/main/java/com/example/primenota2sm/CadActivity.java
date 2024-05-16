@@ -24,12 +24,17 @@ public class CadActivity extends AppCompatActivity {
     Button btnCadastrar;
     ArrayList<String> genero = new ArrayList<>();
     ArrayAdapter<String> adapter;
+<<<<<<< HEAD
+=======
+    //LivroDao livroDao; // Removido
+>>>>>>> b2d8e5dbfb2b9e170f5a1c3c054b301cbeda117e
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cad);
 
+        editTextPesquisa = findViewById(R.id.edit_text_nome_inclusao);
         editTextPesquisa = findViewById(R.id.edit_text_nome_inclusao);
         selecaoGenero = findViewById(R.id.spinner_genero_inclusao);
         estrelaNota = findViewById(R.id.rating_bar_nota_inclusao);
@@ -42,10 +47,19 @@ public class CadActivity extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Banco de dados
+                LivroModel livroModel = new LivroModel();
+                livroModel.getNome() = editTextPesquisa.getText().toString();
+                livroModel.getNota() = estrelaNota.getRating();
+                livroModel.getGenero() = selecaoGenero();
+                livroModel.setTipo() = tipoLivro.isChecked()?"Ebook":"Livro fisico";
+
+
+
+
                 String nome = editTextPesquisa.getText().toString();
                 int indiceGenero = selecaoGenero.getSelectedItemPosition();
                 float nota = estrelaNota.getRating();
-                String tipo = tipoLivro.isChecked() ? "Livro físico" : "E-BOOK";
 
                 if (nome.isEmpty()) {
                     editTextPesquisa.setError("Digite o nome do livro");
@@ -53,10 +67,25 @@ public class CadActivity extends AppCompatActivity {
                     Toast.makeText(CadActivity.this, "Escolha um gênero!", Toast.LENGTH_SHORT).show();
                 } else if (nota == 0) {
                     Toast.makeText(CadActivity.this, "Nota deve ser maior que 0", Toast.LENGTH_SHORT).show();
+                } else if(!tipoLivro.isChecked() && !tipoEbook.isChecked()) {
+                    Toast.makeText(CadActivity.this, "Escolha o tipo do livro", Toast.LENGTH_SHORT).show();
                 } else {
+<<<<<<< HEAD
                     Toast.makeText(CadActivity.this, "Livro cadastrado com sucesso!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CadActivity.this, MainActivity.class);
                     startActivity(intent);
+=======
+                    LivroDao livroDao = new LivroDao(CadActivity.this);
+                    try{
+                            livroDao.inserir(livroModel);
+                        Toast.makeText(CadActivity.this, "Livro cadastrado com sucesso!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(CadActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                    catch (Exception ex){
+                        Toast.makeText(CadActivity.this, "Erro ao inserir: " + ex.toString(), Toast.LENGTH_SHORT).show();
+                    }
+>>>>>>> b2d8e5dbfb2b9e170f5a1c3c054b301cbeda117e
                 }
             }
         });

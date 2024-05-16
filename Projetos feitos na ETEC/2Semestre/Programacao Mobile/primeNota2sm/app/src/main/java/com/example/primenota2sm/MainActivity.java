@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> genero = new ArrayList<>();
     ArrayAdapter<String> adapter;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b2d8e5dbfb2b9e170f5a1c3c054b301cbeda117e
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Generos();
+<<<<<<< HEAD
         ListaLivros();
     }
 
@@ -73,13 +78,26 @@ public class MainActivity extends AppCompatActivity {
         listaDummy.add("Livro 2");
         listaDummy.add("Livro 3");
 
+=======
+        //ListaLivros(); // Não há necessidade de chamar este método aqui
+
+
+    }
+
+    // Método de consulta no banco de dados
+    /*public void ListaLivros(){
+>>>>>>> b2d8e5dbfb2b9e170f5a1c3c054b301cbeda117e
         ArrayAdapter adapter = new ArrayAdapter(
                 MainActivity.this, android.R.layout.simple_list_item_1, listaDummy
         );
 
         listViewLivros.setAdapter(adapter);
-    }
+    }*/
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b2d8e5dbfb2b9e170f5a1c3c054b301cbeda117e
     // Generos que podem ser adicionados no aplicativo
     public void Generos() {
         genero.add("Procura por gênero:");
