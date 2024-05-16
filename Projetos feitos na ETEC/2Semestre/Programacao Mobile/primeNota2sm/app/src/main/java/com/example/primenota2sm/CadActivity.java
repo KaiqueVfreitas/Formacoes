@@ -8,15 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.example.primenota2sm.LivroDao;
-import com.example.primenota2sm.LivroModel;
-import com.example.primenota2sm.MainActivity;
-import com.example.primenota2sm.R;
 
 import java.util.ArrayList;
 
@@ -30,7 +24,6 @@ public class CadActivity extends AppCompatActivity {
     Button btnCadastrar;
     ArrayList<String> genero = new ArrayList<>();
     ArrayAdapter<String> adapter;
-    LivroDao livroDao;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,7 +38,6 @@ public class CadActivity extends AppCompatActivity {
         btnCadastrar = findViewById(R.id.button_inclusao);
 
         Generos();
-        livroDao = new LivroDao(this); // Inicializa o LivroDao
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +54,6 @@ public class CadActivity extends AppCompatActivity {
                 } else if (nota == 0) {
                     Toast.makeText(CadActivity.this, "Nota deve ser maior que 0", Toast.LENGTH_SHORT).show();
                 } else {
-                    LivroModel livro = new LivroModel(nome, genero.get(indiceGenero), nota, tipo);
-                    livroDao.inserir(livro); // Insere o livro no banco de dados
                     Toast.makeText(CadActivity.this, "Livro cadastrado com sucesso!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CadActivity.this, MainActivity.class);
                     startActivity(intent);

@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.EdgeToEdge;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> genero = new ArrayList<>();
     ArrayAdapter<String> adapter;
 
-
-    //Classe LivroDao que acessa os dados
-    private LivroDao livroDao;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,23 +60,27 @@ public class MainActivity extends AppCompatActivity {
 
         Generos();
         ListaLivros();
-
-
     }
 
-    //Método de consulta no banco de dados
+    // Método que lista os livros
     public void ListaLivros(){
-        LivroDao daoLivro 
+        // Aqui você pode implementar a lógica para listar os livros
+        // que seriam recuperados do banco de dados, mas como o LivroDao foi removido,
+        // você precisa substituir essa lógica com outra implementação.
+        // Por exemplo, você pode criar uma lista de livros dummy para exibir na ListView.
+        ArrayList<String> listaDummy = new ArrayList<>();
+        listaDummy.add("Livro 1");
+        listaDummy.add("Livro 2");
+        listaDummy.add("Livro 3");
 
         ArrayAdapter adapter = new ArrayAdapter(
-                MainActivity.this, android.R.layout.simple_list_item_1, genero
+                MainActivity.this, android.R.layout.simple_list_item_1, listaDummy
         );
 
         listViewLivros.setAdapter(adapter);
     }
 
-
-    //Generos que podem ser adicionados no aplicativo
+    // Generos que podem ser adicionados no aplicativo
     public void Generos() {
         genero.add("Procura por gênero:");
         genero.add("Ação");
