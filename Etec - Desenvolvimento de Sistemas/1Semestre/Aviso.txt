@@ -1,0 +1,2 @@
+O primeiro semestre do curso de desenvolvimento de sistemas foi focado em apenas um projeto. 
+Deveria ter um site e um windows forms, todo os 6 meses foi focado nisso e por isso está pasta só tem um arquivo.
